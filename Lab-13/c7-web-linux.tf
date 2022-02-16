@@ -25,6 +25,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "web_vmss" {
       name      = "internal"
       primary   = true
       subnet_id = azurerm_subnet.websubnet.id
+      load_balancer_backend_address_pool_ids = [ azurerm_lb_backend_address_pool.web_lb_backend_address_pool.id ]
     }
   }
   source_image_reference {
