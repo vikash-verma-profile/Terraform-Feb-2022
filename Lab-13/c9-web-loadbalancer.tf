@@ -52,11 +52,3 @@ resource "azurerm_lb_rule" "web_lb_rule_app1" {
   resource_group_name            = azurerm_resource_group.myrg.name
 }
 
-#Associate network interface and standard load balancer
-
-# resource "azurerm_network_interface_backend_address_pool_association" "web_nic_lb_associate" {
-#   #network_interface_id    = azurerm_network_interface.web-vmss-nic.id
-#   network_interface_id=""
-#   ip_configuration_name   = azurerm_lb.weblb.frontend_ip_configuration[0].name
-#   backend_address_pool_id = azurerm_lb_backend_address_pool.web_lb_backend_address_pool.id
-# }
