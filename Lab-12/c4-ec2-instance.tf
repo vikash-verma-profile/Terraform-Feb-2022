@@ -17,17 +17,16 @@ resource "aws_instance" "webapp" {
     private_key = file("private-key/terraform-key.pem")
   }
 
-  # # file provisioner
+  # file provisioner
   # provisioner "file" {
   #   source      = "apps/index.html" #local path on your system from where you are running terraform
   #   destination = "/temp/index.html" #remote path where our infrastructure will be created
   # }
-  # provisioner "remote-exec" {
-  #   inline = [
-  #     "sleep 120",
-  #     "sudo cp /tmp/index.html  /var/www/html"
-  #   ]
-  # }
+  provisioner "remote-exec" {
+    inline = [
+      "New-Item -ItemType directory -Path C:\\downloads -Force"
+    ]
+  }
    provisioner "local-exec" {
    command = "echo ${aws_instance.webapp.private_ip} >>ip.txt"
   #  interpreter = [
