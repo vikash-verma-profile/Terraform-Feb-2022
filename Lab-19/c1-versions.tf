@@ -13,6 +13,7 @@ terraform {
 
     #enable state locking
     #for state locking
+    #Create column name LockID in terraform-dev-state-table table
     dynamodb_table = "terraform-dev-state-table"
     
   }
