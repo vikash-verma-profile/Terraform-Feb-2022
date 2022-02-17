@@ -19,10 +19,30 @@ variable "resource_group_name"{
   default = "myreg"
 }
 #Resource Group Location
+
+# == !=  || or && AND 
+/*(expression one)||(expression two) if any of them is true it will work 
+if both are false then it will given false
+true || true final result true
+false || true final result true
+true || false final result true
+false || false final result false
+
+for AND
+
+true && true final result true
+false && true final result false
+true && false final result false
+false && false final result false
+
+*/
 variable "resource_group_location" {
   description="Resource Group Location"
   type = string
-  default = "East US"
+  validation {
+    condition=var.resource_group_location=="eastus" || var.resource_group_location=="eastus2"
+    error_message = "We only allow Resources to be created in eastus or eastus2 locations."
+  }
 }
 #Virtual Network Name
 variable "virtual_network_name" {
