@@ -30,3 +30,15 @@ variable "virtual_network_name" {
   type = string
   default = "myvnet"
 }
+#virtual network address -dev
+variable "vnet_address_space_dev" {
+  description="Virtual Network Address Space for Dev Environment"
+  type = list(string)
+  default = ["10.0.0.0/16"]
+}
+#virtual network address -All
+variable "vnet_address_space_all" {
+  description="Virtual Network Address Space for All Environment except dev"
+  type = list(string)
+  default = ["10.0.0.0/16","10.2.0.0/16","10.3.0.0/16"]
+}
