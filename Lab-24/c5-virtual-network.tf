@@ -6,8 +6,7 @@
 #   tags                = local.common_tags
 # }
 module "vnet" {
-  source  = "Azure/vnet/azurerm"
-  version = "2.5.0"
+  source  = "github.com/Azure/terraform-azurerm-vnet?ref=2.5.0"
   resource_group_name=azurerm_resource_group.myrg.name
   vnet_location =azurerm_resource_group.myrg.location
   tags=local.common_tags
