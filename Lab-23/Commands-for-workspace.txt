@@ -1,0 +1,4 @@
+terraform workspace new dev==>create new workspace
+terraform workspace select dev==>for selecting and switching to workspace
+terraform workspace delete dev==>delete workspace
+terraform worksopace list==>to List all workspace availabe in current folder
